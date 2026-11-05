@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HaKoClip プライバシーポリシー</title>
+  <style>
+    :root { --bg: #ffffff; --fg: #1f2937; --muted: #6b7280; --border: #e5e7eb; --accent: #4f46e5; --soft: #f5f5fb; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #16151f; --fg: #e5e7eb; --muted: #9ca3af; --border: #34363d; --accent: #a5b4fc; --soft: #1f1e2b; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.8 system-ui, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+    h1 { font-size: 26px; margin: 0 0 4px; color: var(--accent); }
+    h2 { font-size: 19px; margin: 36px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+    p, li { margin: 6px 0; }
+    ul { padding-left: 1.4em; }
+    .meta { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+    .box { background: var(--soft); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    th { width: 34%; font-weight: 600; }
+    code { font-size: 14px; background: var(--soft); padding: 0 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>HaKoClip プライバシーポリシー</h1>
+  <p class="meta">最終更新日：2026年11月5日</p>
+
+  <div class="box">
+    <p><strong>要点：</strong>HaKoClip は、あなたが記録した切り抜きのメモを<strong>あなたのブラウザの中にだけ</strong>保存します。開発者がデータを受け取ったり、集めたり、第三者に渡したりすることはありません。アクセス解析や広告も使っていません。</p>
+  </div>
+
+  <h2>1. HaKoClip について</h2>
+  <p>HaKoClip は、ツイキャス（TwitCasting）の配信アーカイブ（HLS / m3u8）とライブ配信の切り抜き作業を手助けする Chrome 拡張機能です。見どころの区間やマーカーを記録し、再生確認・時間の調整・一覧のテキストコピー・区間の HLS（m3u8）書き出し・Google スプレッドシートでの管理ができます。HaKoClip はツイキャスの公式の拡張機能ではありません。</p>
+
+  <h2>2. 扱うデータと保存場所</h2>
+  <table>
+    <tr><th>切り抜きの記録</th><td>区間・マーカーの時間、タイトル、メモ、ステータス、記録した動画ページのURLと配信タイトル。<br />→ あなたのブラウザ内（<code>chrome.storage.local</code>）に保存されます。</td></tr>
+    <tr><th>設定</th><td>前後の余白の秒数、小窓の高さなど。<br />→ あなたのブラウザ内に保存されます。</td></tr>
+    <tr><th>スプレッドシート連携の設定</th><td>あなたが入力したウェブアプリのURLと、拡張機能が作る合言葉。<br />→ あなたのブラウザ内に保存されます。</td></tr>
+  </table>
+  <p>これらのデータが開発者のサーバーに送られることはありません。開発者はサーバーを運営していません。</p>
+
+  <h2>3. 外部との通信</h2>
+  <p>HaKoClip が通信するのは、次の場合だけです。</p>
+  <ul>
+    <li><strong>Google スプレッドシート連携（使う場合のみ）</strong>：切り抜きの記録を、<strong>あなた自身が作成し公開した Google Apps Script</strong> に送り、あなたのスプレッドシートと同期します。送り先はあなたが設定したURLだけで、データはあなたの Google アカウントのスプレッドシートに保存されます。連携を使わない限り、この通信は行われません。</li>
+    <li><strong>HLS（m3u8）の区間書き出し（使う場合のみ）</strong>：書き出しボタンを押したときに、あなたが開いているツイキャスの動画ページのプレーヤーが読み込んでいる m3u8 プレイリストと、区間に掛かるセグメントだけをツイキャスのサーバーから取得し、ファイル（.ts / .mp4）としてあなたのパソコンに保存します。暗号化された HLS は取得しません。取得はあなたのブラウザから直接行われ、開発者を経由しません。</li>
+  </ul>
+
+  <h2>4. 行わないこと</h2>
+  <ul>
+    <li>個人を特定する情報（氏名・メールアドレスなど）を集めません。</li>
+    <li>閲覧履歴を集めません。HaKoClip が動くのはツイキャスのページだけです。</li>
+    <li>アクセス解析・広告・トラッキングのツールを使いません。</li>
+    <li>データを販売したり、第三者に提供したりしません。</li>
+    <li>拡張機能の機能と関係のない目的でデータを使いません。</li>
+  </ul>
+
+  <h2>5. 権限について</h2>
+  <table>
+    <tr><th><code>storage</code></th><td>切り抜きの記録と設定を、ブラウザ内に保存するため。</td></tr>
+    <tr><th><code>clipboardWrite</code></th><td>記録した区間の一覧を、テキストとしてコピーするため。</td></tr>
+    <tr><th>twitcasting.tv へのアクセス</th><td>動画ページに切り抜き用のボタンを表示し、再生位置の読み取り・区間の再生を行うため。HLS（m3u8）の区間書き出しで、プレイリストとセグメントを取得するため。</td></tr>
+    <tr><th>script.google.com / script.googleusercontent.com へのアクセス</th><td>スプレッドシート連携で、あなたの Apps Script と通信するため。</td></tr>
+  </table>
+
+  <h2>6. データの削除</h2>
+  <ul>
+    <li>ポップアップの「すべて削除」で、記録をすべて削除できます。</li>
+    <li>拡張機能を Chrome から削除すると、ブラウザ内のデータもすべて削除されます。</li>
+    <li>スプレッドシートに同期したデータは、あなたの Google アカウントのスプレッドシートから、あなた自身で削除できます。</li>
+  </ul>
+
+  <h2>7. 変更</h2>
+  <p>このポリシーを変更する場合は、このページで最終更新日とともにお知らせします。</p>
+
+  <h2>8. お問い合わせ</h2>
+  <p>このポリシーや HaKoClip についてのお問い合わせは、次のメールアドレスまでお願いします。<br />
+  <a href="mailto:hanokoto901@gmail.com">hanokoto901@gmail.com</a></p>
+</main>
+</body>
+</html>
